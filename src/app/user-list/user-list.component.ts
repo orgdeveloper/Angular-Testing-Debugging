@@ -58,8 +58,17 @@ export class XyzUserListComponent implements OnInit {
     })
   }
 
+
+
   onClear() {
     this.xyzUserListService.get().then(users => this.users = users);
     this.filter = '';
+
+    this.WebStorageService.setRemote({
+      filter: '',
+      _rev: (this.settings._rev) ? this.settings._rev : this.settings.rev
+    }).subscribe(response => {
+      this.settings = response.json()
+    })
   }
 }
