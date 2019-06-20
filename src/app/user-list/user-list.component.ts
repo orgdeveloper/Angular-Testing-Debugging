@@ -6,7 +6,7 @@ import { WebStorageService} from '../shared/web-storage.service'
 
 @Component({
   selector: 'xyz-user-list',
-  providers: [ XyzFilterByService, XyzUserListService ],
+  // providers: [ XyzFilterByService, XyzUserListService ],
   templateUrl: 'user-list.component.html'
 })
 export class XyzUserListComponent implements OnInit {
