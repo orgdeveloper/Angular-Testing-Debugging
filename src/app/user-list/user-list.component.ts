@@ -39,9 +39,13 @@ export class XyzUserListComponent implements OnInit {
           });
         });
 
-      });
+      }, error => {
+        let output = error.json();
+        console.log('NgOnInit Error:', output);
+      })
     
   }
+
 
   onFilter(filter) {
     this.filter = filter;
